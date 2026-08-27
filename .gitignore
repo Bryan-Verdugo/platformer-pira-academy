@@ -1,0 +1,17 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot-specific defaults
+*.translation
+.import/
+export.cfg
+export_presets.cfg
+
+# Imported assets
+**/*.import
+
+# System files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log

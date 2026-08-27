@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://batuyk1m56uee"]
+
+[ext_resource type="Script" uid="uid://b0e0au21ghri8" path="res://scripts/ui/hud.gd" id="1_0mwgc"]
+[ext_resource type="Texture2D" uid="uid://pyyfn2a6inyp" path="res://assets/sprites/ui/Magaleta_face_ui.png" id="2_hqnrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqnrr"]
+bg_color = Color(0.15294118, 0.68235296, 0.3764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qguk"]
+bg_color = Color(0.20392157, 0.59607846, 0.85882354, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Hud" type="CanvasLayer" unique_id=138444752]
+script = ExtResource("1_0mwgc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=183492331]
+offset_right = 281.0
+offset_bottom = 58.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1645282963]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=181501282]
+layout_mode = 2
+texture = ExtResource("2_hqnrr")
+
+[node name="BarsContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=189557052]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/BarsContainer" unique_id=456285796]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hqnrr")
+
+[node name="ManaBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/BarsContainer" unique_id=2019849120]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8qguk")

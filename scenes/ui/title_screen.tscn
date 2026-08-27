@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bk7y20qhv10ua"]
+
+[ext_resource type="Script" uid="uid://ccwq03bdjy3mv" path="res://scripts/ui/title_screen.gd" id="1_eb34j"]
+[ext_resource type="Texture2D" uid="uid://be8y1nm2mv882" path="res://assets/Diseño sin título (1).png" id="2_aqpy5"]
+[ext_resource type="AudioStream" uid="uid://dwl6jrdarf06a" path="res://assets/audio/music/Final Fantasy X-2 - Eternity - Memory of Lightwaves.mp3" id="3_w8uqo"]
+
+[sub_resource type="Theme" id="Theme_aqpy5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtxxh"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.2912871, 0.39631224, 0.6795082, 1)
+border_width_left = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8uqo"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.2901961, 0.39607844, 0.6784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="title_screen" type="Control" unique_id=1940563581]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 41.0
+offset_bottom = 40.0
+script = ExtResource("1_eb34j")
+
+[node name="Background" type="TextureRect" parent="." unique_id=824707494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1248.0
+offset_bottom = 689.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aqpy5")
+expand_mode = 1
+
+[node name="MenuBox" type="PanelContainer" parent="." unique_id=1430250145]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.5
+offset_top = -40.0
+offset_right = -12.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+accessibility_region = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuBox" unique_id=1229178571]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MenuBox/VBoxContainer" unique_id=920265981]
+layout_mode = 2
+theme = SubResource("Theme_aqpy5")
+theme_override_colors/font_color = Color(1, 0.7137255, 0.8509804, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_xtxxh")
+text = "Jugar"
+
+[node name="QuitButton" type="Button" parent="MenuBox/VBoxContainer" unique_id=1329487423]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.7137255, 0.8509804, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_w8uqo")
+text = "Salir"
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="." unique_id=651972428]
+stream = ExtResource("3_w8uqo")
+volume_db = -20.0
+autoplay = true
